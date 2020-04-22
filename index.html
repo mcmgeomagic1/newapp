@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<html lang="pt-br" data-theme="dark">
+<head>
+	<title>app</title>
+	<meta name="viewport" content="width-device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie-edge">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="resources/vendors/css/ionicons.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Manrope&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="col">
+			<iframe src="pages/button_page.html" name="button_page" class="button_page" frameborder="0" allowfullscreem></iframe>
+			<iframe src="pages/menu_page_empty.html" name="menu_page_empty" class="menu_page_empty" frameborder="0" allowfullscreem></iframe>
+		</div>
+		<footer>
+			<ul>
+				<li>Copyright All Reserved</li>
+				<li>Designed from scratch</li>
+				<li>Modern WebSite</li>
+				<li>2020</li>
+			</ul>
+			</footer>
+	</div>
+</body>
+<script>
+	var checkbox = document.querySelector('input[name=theme]');
+	checkbox.addEventListener('change',function() {
+		if(this.checkbox) {
+		    trans()
+		  document.documentElement.setAtribute('data-theme', 'dark');
+        }else{
+          document.documentElement.setAtribute('data-theme', 'light');
+        }
+	})
+
+	let trean = () => {
+		document.documentElement.classList.add('transition');
+		window.setTimeout(() => {
+			document.documentElement.classList.remove('transition');
+		})
+	}
+</script>
+</html>
