@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+<head>
+
+	<meta name="viewport" content="width-device-width,initial-scale=1.0">
+	<title>app</title>
+	<meta name="viewport" content="width-device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie-edge">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="../resources/vendors/css/ionicons.min.css">
+	<link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="menu_page_background">
+    <ul>
+    	<a href="info.html"><li><i class="ion-information-circled"></i> Info</li></a>
+    	<a href="setting.html"><li><i class="ion-ios-gear"></i> Setting</li></a>
+    	<div class="toggle">
+    		<h2>Night mode</h2>
+    		<div>
+    		<input type="checkbox" id="switch" name="theme"/>
+    		<label for="switch">Toggle</label>
+    	    </div>
+    	</div>
+    	<a href="contact.html"><li><i class="ion-ios-telephone"></i> Contact</li></a>
+    	<a href="about.html"><li><i class="ion-person-stalker"></i> About</li></a>
+    	<a href="menu_page_empty.html"><li><center><i class="ion-close-circled"></i></center></li></a>
+        
+
+    </ul>
+</body>
+<script>
+	 var checkbox = document.querySelector('input[name=theme]');
+
+        checkbox.addEventListener('change', function() {
+            if(this.checked) {
+                trans()
+                document.documentElement.setAttribute('data-theme', 'dark')
+            } else {
+                trans()
+                document.documentElement.setAttribute('data-theme', 'light')
+            }
+        })
+
+        let trans = () => {
+            document.documentElement.classList.add('transition');
+            window.setTimeout(() => {
+                document.documentElement.classList.remove('transition')
+            }, 1000)
+        }
+</html>
